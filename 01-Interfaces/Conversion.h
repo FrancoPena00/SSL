@@ -1,4 +1,4 @@
-double Celsius(double);
-double Farenheit(double);
+double Celsius(int);
+double Farenheit(int);
 void PrintTablaCelsius();
 void PrintTablaFarenheit();

@@ -1,32 +1,25 @@
 #include "Conversion.h"
+#include "PrintTable.h"
 #include "assert.h"
 #include <stdio.h>
 
 
-double Celsius(double f){
-    assert(f <= 300);
-    return (5.0/9.0)*(f-32);
+double Celsius(int f){
+    return (5.0*(f-32.0))/9.0;
 }
 
-double Farenheit(double c){
-    assert(c <= 300);
-    return (c*(9.0/5.0))+32;
-}
-
-void PrintFila(int num1, double num2){
-    printf("%3d %6.1f\n", num1, num2);
+double Farenheit(int c){
+    return ((c*9.0)/5.0)+32;
 }
 
 void PrintTablaCelsius(){
     printf(" F\tC\n");
-    for(int fahr = 0; fahr <= 300; fahr = fahr + 20)
-        PrintFila(fahr, Celsius(fahr));
+    PrintFilas(Celsius,0,300,20);
 }
 
 void PrintTablaFarenheit(){
     printf(" C\tF\n");
-    for(int cels = -20; cels <= 280; cels = cels + 20)
-        PrintFila(cels, Farenheit(cels));
+    PrintFilas(Farenheit,0,300,20);
 }
 
 
